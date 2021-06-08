@@ -1,0 +1,139 @@
+<div class="container mt-5">
+  <div class="card card-body">
+
+    <h2>Mis objetivos</h2>
+
+
+
+    <div class="row mt-4">
+
+    <!-- Left Side: Dailys List -->
+
+
+    <div class="col-md-5 mb-5">
+
+          <div id="menu1">
+
+          <h4>Selecciona día semana</h4>
+          <br>
+
+
+          <li>
+              <ul>
+
+                  <div class="alert alert-primary" role="alert" *ngFor="let dailyscrum of dailyscrums">
+                    <h4 class="calendar">
+                      {{dailyscrum.id}}. {{dailyscrum.dia}}
+
+                      <i class="fas fa-eye float-right mr-2"
+                        style="cursor: pointer;"
+                        (click)="ver(dailyscrum)"
+                        data-toggle="modal" data-target="#exampleModal">
+                      </i>
+
+                    </h4>
+                  </div>
+
+              </ul>
+          </li>
+
+
+          </div>
+
+      </div>
+
+
+  
+
+    <!-- Right Side: Week table -->
+    <div class="col-md-6 offset-md-1">
+
+      <div class="card card-body">
+
+<h2 class="calendar">Semana 31 Mayo - 6 Junio</h2>
+
+
+<hr>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="obj-th"><h4 class="obj">Objetivos</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+
+       
+               <li>Construir blog y agregar posts</li>
+               <li>Avanzar en proyecto Angular</li>
+               <li>Hacer deploy demo de proyecto</li>
+
+        </td>
+
+        
+      </tr>
+    </tbody>
+  </table>
+
+<div id="calendar-container"></div>
+      </div>
+    </div>
+
+  <!-- div de 4 -->
+  </div>
+
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 ng-class="modal-title">{{dailyscrumVer.dia}} </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+<table class="table table-bordered" style="width:100%">
+  <tr>
+     <th class="obj-th">Objetivos</th>
+  </tr> 
+  <tr>
+    <td><h4 class="obj">{{dailyscrumVer.objetivos}}</h4></td>
+  </tr>
+</table>
+
+      <hr>
+
+      <u>Ayer:</u> <p>{{dailyscrumVer.ayer}} </p>
+
+      <u>Hoy:</u> <h4 class="obj">{{dailyscrumVer.hoy}}</h4>
+
+      <u>Obst:</u> <p>{{dailyscrumVer.obst}}</p>
+
+
+
+      <br>
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
